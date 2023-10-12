@@ -38,7 +38,7 @@ const Button: React.FC<ButtonProps> = ({
             py-3
             px-6
             font-medium
-            ${outline ? `` : `bg-white`}
+            ${outline ? `` : `bg-[#F0D268]`}
             ${outline ? `gradient-border` : `border-none`}
             ${outline ? `text-white` : `text-black`}
             ${underline ? `underline border-none` : ``}
@@ -49,6 +49,7 @@ const Button: React.FC<ButtonProps> = ({
             flex
             flex-row
             gap-2
+            font-semibold
             justify-between
             items-center
             ${long ? `!justify-center` : ``} 
