@@ -1,7 +1,43 @@
+"use client"
+
 import Image from 'next/image';
 import Link from 'next/link';
+import { useState, useEffect } from 'react';
 
 const HeaderSection = () => {
+    const [countdown, setCountdown] = useState({
+        days: 0,
+        hours: 0,
+        minutes: 0,
+    });
+
+    // Set the target date and time for the countdown
+    const targetDate = new Date('2023-10-21T00:00:00');
+
+    useEffect(() => {
+        // Function to update the countdown
+        const updateCountdown = () => {
+            const now = new Date().getTime();
+            const timeDifference: number = targetDate.getTime() - now;
+
+            const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+
+            setCountdown({
+                days,
+                hours,
+                minutes,
+            });
+        };
+
+        // Update the countdown every second
+        const countdownInterval = setInterval(updateCountdown, 1000);
+
+        // Clear the interval when the component unmounts
+        return () => clearInterval(countdownInterval);
+    }, []);
+
     return (
         <section className='lg:mx-36 mx-12 mt-16'>
 
@@ -12,6 +48,11 @@ const HeaderSection = () => {
                     </h1>
                     <div className="Herostyles__StyledHeroPresented-sc-ofav2u-4 hlOluo">
                         <div className="Sponsorsstyles__StyledSponsors-sc-1s3hmyw-0 hYucrB">
+                            <div className='font-bold text-xl md:space-x-24 mb-14 mt-10 md:flex space-y-4 md:space-y-0'>
+                                <div>23rd of OCT</div>
+                                <div>FOC-B1-L101</div>
+                                <div>9AM - 12 PM</div>
+                            </div>
                             <div className="Sponsorsstyles__StyledSponsorsTitle-sc-1s3hmyw-1 Cxcci">Organized by</div>
                             <div className="Sponsorsstyles__StyledSponsorsList-sc-1s3hmyw-2 gDStNp">
 
@@ -23,13 +64,13 @@ const HeaderSection = () => {
                                 />
                                 <Image
                                     src="/assets/wifLogo.png"
-                                    alt="Foss-Logo"
+                                    alt="wifLogo"
                                     width={100}
                                     height={100}
                                 />
                                 <Image
-                                    src="/assets/devlabLogo.png"
-                                    alt="Foss-Logo"
+                                    src="/assets/devlab-Logo.png"
+                                    alt="devlabLogo"
                                     width={100}
                                     height={100}
 
@@ -45,19 +86,19 @@ const HeaderSection = () => {
                     <div className="Herostyles__StyledCountdown-sc-ofav2u-7 gvCEVc">
                         <div className="Herostyles__StyledCountdownItem-sc-ofav2u-8 jnVmAU">
                             <p>
-                                <span>00</span>
+                                <span>{countdown.days}</span>
                                 Days
                             </p>
                         </div>
                         <div className="Herostyles__StyledCountdownItem-sc-ofav2u-8 jnVmAU">
                             <p>
-                                <span>00</span>
+                                <span>{countdown.hours}</span>
                                 Hours
                             </p>
                         </div>
                         <div className="Herostyles__StyledCountdownItem-sc-ofav2u-8 jnVmAU">
                             <p>
-                                <span>00</span>
+                                <span>{countdown.minutes}</span>
                                 Minutes
                             </p>
                         </div>
@@ -69,23 +110,28 @@ const HeaderSection = () => {
                             </svg>
                         </div>
                         <div className="Herostyles__StyledCountdownLoadingContainer-sc-ofav2u-11 jkWZUQ">
-                            <div className="Herostyles__StyledCountdownLoadingItem-sc-ofav2u-12 jSlIIA"></div>
-                            <div className="Herostyles__StyledCountdownLoadingItem-sc-ofav2u-12 jSlIIA"></div>
-                            <div className="Herostyles__StyledCountdownLoadingItem-sc-ofav2u-12 jSlIIA"></div>
-                            <div className="Herostyles__StyledCountdownLoadingItem-sc-ofav2u-12 jSlIIA"></div>
-                            <div className="Herostyles__StyledCountdownLoadingItem-sc-ofav2u-12 jSlIIA"></div>
-                            <div className="Herostyles__StyledCountdownLoadingItem-sc-ofav2u-12 jSlIIA"></div>
-                            <div className="Herostyles__StyledCountdownLoadingItem-sc-ofav2u-12 jSlIIA"></div>
-                            <div className="Herostyles__StyledCountdownLoadingItem-sc-ofav2u-12 jSlIIA"></div>
-                            <div className="Herostyles__StyledCountdownLoadingItem-sc-ofav2u-12 jSlIIA"></div>
-                            <div className="Herostyles__StyledCountdownLoadingItem-sc-ofav2u-12 jSlIIA"></div>
-                            <div className="Herostyles__StyledCountdownLoadingItem-sc-ofav2u-12 jSlIIA"></div>
-                            <div className="Herostyles__StyledCountdownLoadingItem-sc-ofav2u-12 jSlIIA"></div>
-                            <div className="Herostyles__StyledCountdownLoadingItem-sc-ofav2u-12 jSlIIA"></div>
-                            <div className="Herostyles__StyledCountdownLoadingItem-sc-ofav2u-12 jSlIIA"></div>
-                            <div className="Herostyles__StyledCountdownLoadingItem-sc-ofav2u-12 jSlIIA"></div>
-                            <div className="Herostyles__StyledCountdownLoadingItem-sc-ofav2u-12 jSlIIA"></div>
-                            <div className="Herostyles__StyledCountdownLoadingItem-sc-ofav2u-12 jSlIIA"></div>
+                            <div className="Herostyles__StyledCountdownLoadingItem-sc-ofav2u-12 jSlIIA" style={{
+                                backgroundColor: countdown.days >= 7 ? '#EC4237' : '',
+                            }}></div>
+                            <div className="Herostyles__StyledCountdownLoadingItem-sc-ofav2u-12 jSlIIA" style={{
+                                backgroundColor: countdown.days >= 6 ? '#EC4237' : '',
+                            }}></div>
+                            <div className="Herostyles__StyledCountdownLoadingItem-sc-ofav2u-12 jSlIIA" style={{
+                                backgroundColor: countdown.days >= 5 ? '#EC4237' : '',
+                            }}></div>
+                            <div className="Herostyles__StyledCountdownLoadingItem-sc-ofav2u-12 jSlIIA" style={{
+                                backgroundColor: countdown.days >= 4 ? '#EC4237' : '',
+                            }}></div>
+                            <div className="Herostyles__StyledCountdownLoadingItem-sc-ofav2u-12 jSlIIA" style={{
+                                backgroundColor: countdown.days >= 3 ? '#EC4237' : '',
+                            }}></div>
+                            <div className="Herostyles__StyledCountdownLoadingItem-sc-ofav2u-12 jSlIIA" style={{
+                                backgroundColor: countdown.days >= 2 ? '#EC4237' : '',
+                            }}></div>
+                            <div className="Herostyles__StyledCountdownLoadingItem-sc-ofav2u-12 jSlIIA" style={{
+                                backgroundColor: countdown.minutes >= 1 ? '#EC4237' : '',
+                            }}></div>
+
                         </div>
                     </div>
                     <Link href="/register" className="ButtonMainstyles__StyledButtonMain-sc-1f8wtna-0 kMzRJv ">

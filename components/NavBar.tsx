@@ -20,9 +20,9 @@ export default function NavBar() {
         <Disclosure as="nav" className="mb-36">
             {({ open }) => (
                 <>
-                    <div className="pt-3 top-0 lg:pt-8 fixed md:px-32 bg-black pb-6 z-50" style={{width:"100%"}}>
+                    <div className="pt-3 top-0 lg:pt-8 fixed md:px-32 bg-black pb-6 z-40" style={{width:"100%"}}>
                         <div className="relative flex h-16 items-center justify-between">
-                            <div className="absolute inset-y-0 right-7 flex items-center sm:hidden">
+                            <div className="absolute inset-y-0 right-7 flex items-center sm:hidden  z-50">
                                 {/* Mobile menu button*/}
                                 <Disclosure.Button className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
                                     <span className="sr-only">Open main menu</span>
@@ -35,6 +35,7 @@ export default function NavBar() {
                             </div>
                             <div className="flex flex-1 items-left justify-left sm:items-stretch sm:justify-start">
                                 <div className="flex flex-shrink-0 items-center">
+                                    <a href="/">
                                     <Image
                                         className="block h-24 w-24 lg:hidden"
                                         src="/assets/hl.png"
@@ -48,6 +49,7 @@ export default function NavBar() {
                                         width={100}
                                         height={100}
                                     />
+                                    </a>   
                                 </div>
                             </div>
                             <div className="hidden md:flex absolute inset-y-0 right-0 items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
@@ -62,7 +64,7 @@ export default function NavBar() {
                         </div>
                     </div>
 
-                    <Disclosure.Panel className="sm:hidden">
+                    <Disclosure.Panel className="sm:hidden pt-20">
                         <div className="space-y-1 px-2 pt-2 pb-3">
                             {navigation.map((item) => (
                                 <Disclosure.Button

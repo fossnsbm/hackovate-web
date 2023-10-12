@@ -1,5 +1,5 @@
 import Footer from '@/components/Footer'
-import BodySection from '@/components/HeaderSection'
+import HeaderSection from '@/components/HeaderSection'
 import NavBar from '@/components/NavBar'
 import AboutSection from '@/components/AboutSection'
 import Image from 'next/image'
@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <div>
      <NavBar />
-     <BodySection />
+     <HeaderSection />
      <AboutSection />
      <Footer />
     </div>
