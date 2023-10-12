@@ -17,10 +17,10 @@ function classNames(...classes: string[]) {
 
 export default function NavBar() {
     return (
-        <Disclosure as="nav">
+        <Disclosure as="nav" className="mb-36">
             {({ open }) => (
                 <>
-                    <div className="mx-auto max-w-7xl px-2 sm:px-6= lg:px-0 mt-4 lg:mt-8">
+                    <div className="pt-3 top-0 lg:pt-8 fixed md:px-32 bg-black pb-6 z-50" style={{width:"100%"}}>
                         <div className="relative flex h-16 items-center justify-between">
                             <div className="absolute inset-y-0 right-7 flex items-center sm:hidden">
                                 {/* Mobile menu button*/}
@@ -37,13 +37,13 @@ export default function NavBar() {
                                 <div className="flex flex-shrink-0 items-center">
                                     <Image
                                         className="block h-24 w-24 lg:hidden"
-                                        src="/assets/hackovateLogo.png"
+                                        src="/assets/hl.png"
                                         alt="Hackovate-Logo"
                                         width={100}
                                         height={100}
                                     /><Image
                                         className="hidden h-40 w-auto lg:block"
-                                        src="/assets/hackovateLogo.png"
+                                        src="/assets/hackovate_logo.png"
                                         alt="Hackovate-Logo"
                                         width={100}
                                         height={100}
@@ -56,7 +56,7 @@ export default function NavBar() {
                                     About
                                 </Link>
                                 <Link href="/register" className="ButtonMainstyles__StyledButtonMain-sc-1f8wtna-0 kMzRJv ">
-                                    Start Hacking
+                                    <p className='font-bold'>Start Hacking</p>
                                 </Link>
                             </div>
                         </div>
