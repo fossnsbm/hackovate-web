@@ -40,14 +40,14 @@ const RegisterForm = () => {
   return (
     <>
       <Container>
-        <div className="py-10">
-          <h1 className="text-gray text-2xl md:text-4xl lg:text-5xl">
+        <div className="pt-10 pb-24">
+          <h1 className="text-gray text-2xl md:text-4xl lg:text-5xl font-semibold">
             Let&apos;s get <span className="text-[#F0D268]">registered.</span>
           </h1>
         </div>
 
         <div>
-          <div className="border border-white rounded-lg p-4 md:p-6">
+          <div className="border border-white rounded-lg p-4 md:py-10 md:px-20">
             <form action="#">
               <div className={`${formStyles.divStyle}`}>
                 <label className={`${formStyles.labelStyle}`}>Full name*</label>
