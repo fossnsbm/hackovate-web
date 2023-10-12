@@ -1,8 +1,35 @@
 const RegisterForm = () => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const formEle: HTMLFormElement | null = document.querySelector("form");
+
+    if (formEle) {
+      const formData = new FormData(formEle);
+
+      fetch(
+        "https://script.google.com/macros/s/AKfycbw6Acobc4GrkONNHb9zSbwErUekmwivK354epB5P3-3eNvyWLnB2MbbeX1Qhyz8c6lyHw/exec",
+        {
+          method: "POST",
+          body: formData,
+        }
+      )
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+        })
+        .catch((err) => {
+          console.log(err);
+          alert("Thank you for registering. We will get back to you soon.");
+        });
+
+      formEle.reset();
+    }
+  };
+
   return (
     <>
-      <div className="container mx-auto mt-10">
-        <form>
+      <div className="container md:mx-auto mt-10">
+        <form onSubmit={handleSubmit}>
           <div className="grid gap-6 mb-6 md:grid-cols-2">
             <div>
               <label
@@ -13,28 +40,32 @@ const RegisterForm = () => {
               </label>
               <input
                 type="text"
+                name="name"
                 id="name"
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-                placeholder="Enter Full Name"
+                placeholder="Full Name"
                 required
               />
             </div>
             <div>
               <label
-                htmlFor="countries"
+                htmlFor="batch"
                 className="block mb-2 text-sm font-medium text-white"
               >
                 Slect Batch
               </label>
               <select
-                id="countries"
+                name="batch"
+                id="batch"
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               >
-                <option selected>Please Select</option>
-                <option value="US">United States</option>
-                <option value="CA">Canada</option>
-                <option value="FR">France</option>
-                <option value="DE">Germany</option>
+                <option defaultValue={0}>Please Select</option>
+                <option value="21.1">21.1</option>
+                <option value="21.2">21.2</option>
+                <option value="22.1">22.1</option>
+                <option value="22.2">22.2</option>
+                <option value="23.1">23.1</option>
+                <option value="23.2">23.2</option>
               </select>
             </div>
             <div>
@@ -46,9 +77,11 @@ const RegisterForm = () => {
               </label>
               <input
                 type="text"
+                name="email"
                 id="email"
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-                placeholder="someone@example.com"
+                placeholder="The email address you used to register for the github account"
+                pattern="\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b"
                 required
               />
             </div>
@@ -61,10 +94,26 @@ const RegisterForm = () => {
               </label>
               <input
                 type="tel"
+                name="phone"
                 id="phone"
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                 placeholder="123-45-678"
-                pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
+                required
+              />
+            </div>
+            <div>
+              <label
+                htmlFor="github_username"
+                className="block mb-2 text-sm font-medium text-white dark:text-white"
+              >
+                Github Username
+              </label>
+              <input
+                type="text"
+                name="github_username"
+                id="github_username"
+                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                placeholder="Your Github Username"
                 required
               />
             </div>
