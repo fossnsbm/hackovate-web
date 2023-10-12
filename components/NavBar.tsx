@@ -35,6 +35,7 @@ export default function NavBar() {
                             </div>
                             <div className="flex flex-1 items-left justify-left sm:items-stretch sm:justify-start">
                                 <div className="flex flex-shrink-0 items-center">
+                                    <a href="/">
                                     <Image
                                         className="block h-24 w-24 lg:hidden"
                                         src="/assets/hl.png"
@@ -48,6 +49,7 @@ export default function NavBar() {
                                         width={100}
                                         height={100}
                                     />
+                                    </a>   
                                 </div>
                             </div>
                             <div className="hidden md:flex absolute inset-y-0 right-0 items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
