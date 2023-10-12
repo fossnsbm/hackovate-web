@@ -1,7 +1,43 @@
+"use client"
+
 import Image from 'next/image';
 import Link from 'next/link';
+import { useState, useEffect } from 'react';
 
 const HeaderSection = () => {
+    const [countdown, setCountdown] = useState({
+        days: 0,
+        hours: 0,
+        minutes: 0,
+      });
+    
+      // Set the target date and time for the countdown
+      const targetDate = new Date('2023-10-18T00:00:00');
+    
+      useEffect(() => {
+        // Function to update the countdown
+        const updateCountdown = () => {
+            const now = new Date().getTime();
+            const timeDifference: number = targetDate.getTime() - now;
+
+            const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+
+            setCountdown({
+                days,
+                hours,
+                minutes,
+            });
+        };
+    
+        // Update the countdown every second
+        const countdownInterval = setInterval(updateCountdown, 1000);
+    
+        // Clear the interval when the component unmounts
+        return () => clearInterval(countdownInterval);
+      }, []);
+  
     return (
         <section className='lg:mx-36 mx-12 mt-16'>
 
@@ -23,13 +59,13 @@ const HeaderSection = () => {
                                 />
                                 <Image
                                     src="/assets/wifLogo.png"
-                                    alt="Foss-Logo"
+                                    alt="wifLogo"
                                     width={100}
                                     height={100}
                                 />
                                 <Image
-                                    src="/assets/devlabLogo.png"
-                                    alt="Foss-Logo"
+                                    src="/assets/devlab-Logo.png"
+                                    alt="devlabLogo"
                                     width={100}
                                     height={100}
 
@@ -45,19 +81,19 @@ const HeaderSection = () => {
                     <div className="Herostyles__StyledCountdown-sc-ofav2u-7 gvCEVc">
                         <div className="Herostyles__StyledCountdownItem-sc-ofav2u-8 jnVmAU">
                             <p>
-                                <span>00</span>
+                                <span>{countdown.days}</span>
                                 Days
                             </p>
                         </div>
                         <div className="Herostyles__StyledCountdownItem-sc-ofav2u-8 jnVmAU">
                             <p>
-                                <span>00</span>
+                                <span>{countdown.hours}</span>
                                 Hours
                             </p>
                         </div>
                         <div className="Herostyles__StyledCountdownItem-sc-ofav2u-8 jnVmAU">
                             <p>
-                                <span>00</span>
+                                <span>{countdown.minutes}</span>
                                 Minutes
                             </p>
                         </div>
