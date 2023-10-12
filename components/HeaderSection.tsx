@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 const HeaderSection = () => {
     return (
@@ -13,34 +14,34 @@ const HeaderSection = () => {
                         <div className="Sponsorsstyles__StyledSponsors-sc-1s3hmyw-0 hYucrB">
                             <div className="Sponsorsstyles__StyledSponsorsTitle-sc-1s3hmyw-1 Cxcci">Organized by</div>
                             <div className="Sponsorsstyles__StyledSponsorsList-sc-1s3hmyw-2 gDStNp">
-                               
-                                    <Image
-                                        src="/assets/fossLogo.png"
-                                        alt="Foss-Logo"
-                                        width={100}
-                                        height={100}
-                                    />
-                                    <Image
-                                        src="/assets/wifLogo.png"
-                                        alt="Foss-Logo"
-                                        width={100}
-                                        height={100}
-                                    />
-                                    <Image
-                                        src="/assets/devlabLogo.png"
-                                        alt="Foss-Logo"
-                                        width={100}
-                                        height={100}
-                        
-                                    />
-                              
+
+                                <Image
+                                    src="/assets/fossLogo.png"
+                                    alt="Foss-Logo"
+                                    width={100}
+                                    height={100}
+                                />
+                                <Image
+                                    src="/assets/wifLogo.png"
+                                    alt="Foss-Logo"
+                                    width={100}
+                                    height={100}
+                                />
+                                <Image
+                                    src="/assets/devlabLogo.png"
+                                    alt="Foss-Logo"
+                                    width={100}
+                                    height={100}
+
+                                />
+
                             </div>
                         </div>
                     </div>
                 </div>
-                <div className="Herostyles__StyledHeroCountdown-sc-ofav2u-5 iRMidE">
+                <div className="Herostyles__StyledHeroCountdown-sc-ofav2u-5 iRMidE md:mt-16">
                     <div className="Herostyles__StyledCountdownHeader-sc-ofav2u-6 SUZBL">HACKOVATE registration
-                        is open now!</div>
+                        is open for</div>
                     <div className="Herostyles__StyledCountdown-sc-ofav2u-7 gvCEVc">
                         <div className="Herostyles__StyledCountdownItem-sc-ofav2u-8 jnVmAU">
                             <p>
@@ -87,7 +88,9 @@ const HeaderSection = () => {
                             <div className="Herostyles__StyledCountdownLoadingItem-sc-ofav2u-12 jSlIIA"></div>
                         </div>
                     </div>
-                    <a href="/auth/" className="ButtonMainstyles__StyledButtonMain-sc-1f8wtna-0 kMzRJv">Register now!</a>
+                    <Link href="/register" className="ButtonMainstyles__StyledButtonMain-sc-1f8wtna-0 kMzRJv ">
+                        <p className='font-bold'>Register now!</p>
+                    </Link>
                 </div>
             </div>
 
