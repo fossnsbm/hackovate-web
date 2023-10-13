@@ -1,16 +1,20 @@
-import HeaderSection from '@/components/HeaderSection'
-import NavBar from '@/components/NavBar'
-import AboutSection from '@/components/AboutSection'
-import LongFooter from '@/components/LongFooter'
-import Image from 'next/image'
+'use client';
+
+import FoosterLanding from "@/components/landing/FooterLanding";
+import HeroLanding from "@/components/landing/HeroLanding";
+import LatestEvents from "@/components/landing/LatestEvents";
 
 export default function Home() {
   return (
-    <div>
-     <NavBar />
-     <HeaderSection />
-     <AboutSection />
-     <LongFooter />
-    </div>
-  )
+    <>
+      <HeroLanding />
+      <LatestEvents />
+      <FoosterLanding />
+    </>
+  );
 }
+
+
+
+
+

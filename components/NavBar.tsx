@@ -35,7 +35,7 @@ export default function NavBar() {
                             </div>
                             <div className="flex flex-1 items-left justify-left sm:items-stretch sm:justify-start ps-10 md:ps-0">
                                 <div className="flex flex-shrink-0 items-center">
-                                    <a href="/">
+                                    <a href="//events/hackovate">
                                         <Image
                                             className="block h-24 w-24 lg:hidden"
                                             src="/assets/hackNew.webp"
@@ -54,10 +54,10 @@ export default function NavBar() {
                             </div>
                             <div className="hidden md:flex absolute inset-y-0 right-0 items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
 
-                                <Link href="/#About" className="Headerstyles__StyledHeaderLink-sc-cucath-8 zZYfh md:mr-8">
+                                <Link href="/events/hackovate/#About" className="Headerstyles__StyledHeaderLink-sc-cucath-8 zZYfh md:mr-8">
                                     About
                                 </Link>
-                                <Link href="/register" className="ButtonMainstyles__StyledButtonMain-sc-1f8wtna-0 kMzRJv ">
+                                <Link href="/events/hackovate/register" className="ButtonMainstyles__StyledButtonMain-sc-1f8wtna-0 kMzRJv ">
                                     <p className='font-bold'>Start Hacking</p>
                                 </Link>
                             </div>
