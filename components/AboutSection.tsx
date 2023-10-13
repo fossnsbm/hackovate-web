@@ -4,7 +4,7 @@ import Image from "next/image";
 const AboutSection = () => {
     return (
         <>
-            <div className='flex '>
+            <div className='flex' id="About">
                 <div className='left-0 mx-6 pt-28'>
                     <Image
                         className='hidden md:block'
