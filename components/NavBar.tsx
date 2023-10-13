@@ -20,7 +20,7 @@ export default function NavBar() {
         <Disclosure as="nav" className="">
             {({ open }) => (
                 <>
-                    <div className="backdrop-filter backdrop-blur-xl pt-3 top-0 lg:pt-4 fixed md:px-32 pb-1 z-40" style={{width:"100%"}}>
+                    <div className="backdrop-filter backdrop-blur-xl pt-3 top-0 lg:pt-4 fixed md:px-32 pb-1 z-40" style={{ width: "100%" }}>
                         <div className="relative flex h-16 items-center justify-between">
                             <div className="absolute inset-y-0 right-7 flex items-center sm:hidden  z-50">
                                 {/* Mobile menu button*/}
@@ -36,20 +36,20 @@ export default function NavBar() {
                             <div className="flex flex-1 items-left justify-left sm:items-stretch sm:justify-start">
                                 <div className="flex flex-shrink-0 items-center">
                                     <a href="/">
-                                    <Image
-                                        className="block h-24 w-24 lg:hidden"
-                                        src="/assets/hl.png"
-                                        alt="Hackovate-Logo"
-                                        width={100}
-                                        height={100}
-                                    /><Image
-                                        className="hidden h-40 w-auto lg:block"
-                                        src="/assets/hackovate_logo.png"
-                                        alt="Hackovate-Logo"
-                                        width={100}
-                                        height={100}
-                                    />
-                                    </a>   
+                                        <Image
+                                            className="block h-24 w-24 lg:hidden"
+                                            src="/assets/hl.png"
+                                            alt="Hackovate-Logo"
+                                            width={100}
+                                            height={100}
+                                        /><Image
+                                            className="hidden h-40 w-auto lg:block"
+                                            src="/assets/hackovate_logo.png"
+                                            alt="Hackovate-Logo"
+                                            width={100}
+                                            height={100}
+                                        />
+                                    </a>
                                 </div>
                             </div>
                             <div className="hidden md:flex absolute inset-y-0 right-0 items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">

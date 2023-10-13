@@ -83,19 +83,19 @@ const HeaderSection = () => {
                     <div className="Herostyles__StyledCountdownHeader-sc-ofav2u-6 SUZBL">HACKOVATE registration
                         is open for</div>
                     <div className="Herostyles__StyledCountdown-sc-ofav2u-7 gvCEVc">
-                        <div className="Herostyles__StyledCountdownItem-sc-ofav2u-8 jnVmAU">
+                        <div className="Herostyles__StyledCountdownItem-sc-ofav2u-8 jnVmAU font-mono">
                             <p>
                                 <span>{countdown.days}</span>
                                 Days
                             </p>
                         </div>
-                        <div className="Herostyles__StyledCountdownItem-sc-ofav2u-8 jnVmAU">
+                        <div className="Herostyles__StyledCountdownItem-sc-ofav2u-8 jnVmAU font-mono">
                             <p>
                                 <span>{countdown.hours}</span>
                                 Hours
                             </p>
                         </div>
-                        <div className="Herostyles__StyledCountdownItem-sc-ofav2u-8 jnVmAU">
+                        <div className="Herostyles__StyledCountdownItem-sc-ofav2u-8 jnVmAU font-mono">
                             <p>
                                 <span>{countdown.minutes}</span>
                                 Minutes
@@ -128,7 +128,7 @@ const HeaderSection = () => {
                                 backgroundColor: countdown.days >= 2 ? '#EC4237' : '',
                             }}></div>
                             <div className="Herostyles__StyledCountdownLoadingItem-sc-ofav2u-12 jSlIIA" style={{
-                                backgroundColor: countdown.minutes >= 1 ? '#EC4237' : '',
+                                backgroundColor: (countdown.minutes >= 1 && countdown.days >= 1) ? '#EC4237' : '',
                             }}></div>
 
                         </div>
