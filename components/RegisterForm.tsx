@@ -1,40 +1,144 @@
+import { useState } from "react";
 import Button from "./Button";
 import Container from "./Container";
 
 const formStyles = {
   labelStyle: "text-white md:text-lg lg:text-xl",
+  formErrorStyle: "text-red-600 mt-2 font-semibold",
   inputStyle:
     "bg-black border border-gray text-white rounded-md p-1 mt-2 w-full md:p-2",
   divStyle: "mb-5",
 };
 
 const RegisterForm = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    github_username: "",
+    phone: "",
+    student_id: "",
+    batch: "",
+  });
+
+  const [formErrors, setFormErrors] = useState({
+    name: "",
+    email: "",
+    github_username: "",
+    phone: "",
+    student_id: "",
+    batch: "",
+  });
+
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    console.log("HTTP");
     e.preventDefault();
-    const formEle: HTMLFormElement | null = document.querySelector("form");
 
-    if (formEle) {
-      const formData = new FormData(formEle);
+    const isValid = validateForm();
 
-      fetch(
-        "https://script.google.com/macros/s/AKfycbxNvV4X3a-Vml9d84hFr6Jll573YgEoLkQLCy0AI4qTQ8GomXjMb9XPZRbtvG75MjBLxA/exec",
-        {
-          method: "POST",
-          body: formData,
+    if (isValid) {
+      const formEle: HTMLFormElement | null = document.querySelector("form");
+
+      if (formEle) {
+        if (formEle) {
+          const formData = new FormData(formEle);
+
+          fetch(
+            "https://script.google.com/macros/s/AKfycbxNvV4X3a-Vml9d84hFr6Jll573YgEoLkQLCy0AI4qTQ8GomXjMb9XPZRbtvG75MjBLxA/exec",
+            {
+              method: "POST",
+              body: formData,
+            }
+          )
+            .then((res) => res.json())
+            .then((data) => {
+              console.log(data);
+            })
+            .catch((err) => {
+              console.log(err);
+              alert("Thank you for registering. We will get back to you soon.");
+              setFormData({
+                name: "",
+                email: "",
+                github_username: "",
+                phone: "",
+                student_id: "",
+                batch: "",
+              });
+
+              setFormErrors({
+                name: "",
+                email: "",
+                github_username: "",
+                phone: "",
+                student_id: "",
+                batch: "",
+              });
+            });
         }
-      )
-        .then((res) => res.json())
-        .then((data) => {
-          console.log(data);
-        })
-        .catch((err) => {
-          console.log(err);
-          alert("Thank you for registering. We will get back to you soon.");
-        });
-
-      formEle.reset();
+      }
     }
+  };
+
+  const validateForm = () => {
+    const errors: any = {};
+    let isValid = true;
+
+    // Validate name
+    if (!formData.name) {
+      errors.name = "Name is required";
+      isValid = false;
+    }
+
+    // Validate github_username
+    if (!formData.github_username) {
+      errors.github_username = "Github username is required";
+      isValid = false;
+    }
+
+    // Validate phone
+    if (!formData.phone) {
+      errors.phone = "Phone is required";
+      isValid = false;
+    }
+
+    // Validate student_id
+    if (!formData.student_id) {
+      errors.student_id = "Student ID is required";
+      isValid = false;
+    }
+
+    // Validate batch
+    if (!formData.batch) {
+      errors.batch = "Batch is required";
+      isValid = false;
+    }
+
+    // Validate email
+    if (!formData.email) {
+      errors.email = "Email is required";
+      isValid = false;
+    } else if (!isValidEmail(formData.email)) {
+      errors.email = "Invalid email format";
+      isValid = false;
+    }
+
+    // Add validation for other fields like github_username, phone, student_id, batch here
+
+    setFormErrors(errors);
+    return isValid;
+  };
+
+  const isValidEmail = (email: any) => {
+    // You can implement a more complex email validation regex here
+    const emailPattern = /^\S+@\S+\.\S+$/;
+    return emailPattern.test(email);
+  };
+
+  const handleInputChange = (e: any) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
   };
 
   return (
@@ -52,18 +156,32 @@ const RegisterForm = () => {
               <div className={`${formStyles.divStyle}`}>
                 <label className={`${formStyles.labelStyle}`}>Full name*</label>
                 <input
+                  value={formData.name}
+                  onChange={handleInputChange}
                   name="name"
                   type="text"
                   className={`${formStyles.inputStyle}`}
                 />
+                {formErrors.name && (
+                  <div className={`${formStyles.formErrorStyle}`}>
+                    {formErrors.name}
+                  </div>
+                )}
               </div>
               <div className={`${formStyles.divStyle}`}>
                 <label className={`${formStyles.labelStyle}`}>Email*</label>
                 <input
+                  value={formData.email}
+                  onChange={handleInputChange}
                   name="email"
                   type="email"
                   className={`${formStyles.inputStyle}`}
                 />
+                {formErrors.email && (
+                  <div className={`${formStyles.formErrorStyle}`}>
+                    {formErrors.email}
+                  </div>
+                )}
               </div>
               <div className={`${formStyles.divStyle}`}>
                 <label className={`${formStyles.labelStyle}`}>
@@ -71,45 +189,67 @@ const RegisterForm = () => {
                 </label>
                 <input
                   name="github_username"
+                  value={formData.github_username}
+                  onChange={handleInputChange}
                   type="text"
                   className={`${formStyles.inputStyle}`}
                 />
+                {formErrors.github_username && (
+                  <div className={`${formStyles.formErrorStyle}`}>
+                    {formErrors.github_username}
+                  </div>
+                )}
               </div>
               <div className={`${formStyles.divStyle}`}>
                 <label className={`${formStyles.labelStyle}`}>
                   Contact number*
                 </label>
                 <input
+                  value={formData.phone}
+                  onChange={handleInputChange}
                   name="phone"
                   type="text"
                   className={`${formStyles.inputStyle}`}
                 />
+                {formErrors.phone && (
+                  <div className={`${formStyles.formErrorStyle}`}>
+                    {formErrors.phone}
+                  </div>
+                )}
               </div>
               <div className={`${formStyles.divStyle}`}>
                 <label className={`${formStyles.labelStyle}`}>
                   Student ID*
                 </label>
                 <input
+                  value={formData.student_id}
+                  onChange={handleInputChange}
                   name="student_id"
                   type="text"
                   className={`${formStyles.inputStyle}`}
                 />
+                {formErrors.student_id && (
+                  <div className={`${formStyles.formErrorStyle}`}>
+                    {formErrors.student_id}
+                  </div>
+                )}
               </div>
               <div className={`${formStyles.divStyle}`}>
                 <label className={`${formStyles.labelStyle}`}>Batch*</label>
                 <input
                   name="batch"
+                  value={formData.batch}
+                  onChange={handleInputChange}
                   type="text"
                   className={`${formStyles.inputStyle}`}
                 />
+                {formErrors.batch && (
+                  <div className={`${formStyles.formErrorStyle}`}>
+                    {formErrors.batch}
+                  </div>
+                )}
               </div>
               <div className="mt-6">
-                {/* <button
-                type="submit"
-                className="text-white w-full flex items-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-              >
-                Submit
-              </button> */}
                 <Button label="Register" onClick={handleSubmit as any} long />
               </div>
             </form>
