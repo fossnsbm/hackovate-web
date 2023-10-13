@@ -63,7 +63,7 @@ const RegisterForm = () => {
                 "success"
               ).then(() => {
                 // redirect to home page
-                router.push("/");
+                router.push("/events/hackovate");
               });
 
               setFormData({
