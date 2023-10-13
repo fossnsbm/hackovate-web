@@ -1,6 +1,8 @@
 import { useState } from "react";
 import Button from "./Button";
 import Container from "./Container";
+import Swal from "sweetalert2";
+import { useRouter } from "next/navigation";
 
 const formStyles = {
   labelStyle: "text-white md:text-lg lg:text-xl",
@@ -11,6 +13,7 @@ const formStyles = {
 };
 
 const RegisterForm = () => {
+  const router = useRouter();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -54,7 +57,15 @@ const RegisterForm = () => {
             })
             .catch((err) => {
               console.log(err);
-              alert("Thank you for registering. We will get back to you soon.");
+              Swal.fire(
+                "Thank you for registering!",
+                "We will get back to you soon.",
+                "success"
+              ).then(() => {
+                // redirect to home page
+                router.push("/");
+              });
+
               setFormData({
                 name: "",
                 email: "",
@@ -98,11 +109,17 @@ const RegisterForm = () => {
     if (!formData.phone) {
       errors.phone = "Phone is required";
       isValid = false;
+    } else if (formData.phone.length !== 10) {
+      errors.phone = "Phone number should be 10 digits long";
+      isValid = false;
     }
 
     // Validate student_id
     if (!formData.student_id) {
       errors.student_id = "Student ID is required";
+      isValid = false;
+    } else if (formData.student_id.length !== 5) {
+      errors.student_id = "Student ID should be 5 characters long";
       isValid = false;
     }
 
@@ -121,15 +138,13 @@ const RegisterForm = () => {
       isValid = false;
     }
 
-    // Add validation for other fields like github_username, phone, student_id, batch here
-
     setFormErrors(errors);
     return isValid;
   };
 
   const isValidEmail = (email: any) => {
     // You can implement a more complex email validation regex here
-    const emailPattern = /^\S+@\S+\.\S+$/;
+    const emailPattern = /^[a-zA-Z0-9]+@(?:[a-zA-Z0-9]+\.)+[A-Za-z]+$/;
     return emailPattern.test(email);
   };
 
@@ -208,6 +223,7 @@ const RegisterForm = () => {
                   value={formData.phone}
                   onChange={handleInputChange}
                   name="phone"
+                  maxLength={10}
                   type="text"
                   className={`${formStyles.inputStyle}`}
                 />
@@ -219,12 +235,13 @@ const RegisterForm = () => {
               </div>
               <div className={`${formStyles.divStyle}`}>
                 <label className={`${formStyles.labelStyle}`}>
-                  Student ID*
+                  NSBM Student ID*
                 </label>
                 <input
                   value={formData.student_id}
                   onChange={handleInputChange}
                   name="student_id"
+                  maxLength={5}
                   type="text"
                   className={`${formStyles.inputStyle}`}
                 />
