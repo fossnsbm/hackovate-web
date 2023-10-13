@@ -33,21 +33,21 @@ export default function NavBar() {
                                     )}
                                 </Disclosure.Button>
                             </div>
-                            <div className="flex flex-1 items-left justify-left sm:items-stretch sm:justify-start">
+                            <div className="flex flex-1 items-left justify-left sm:items-stretch sm:justify-start ps-10 md:ps-0">
                                 <div className="flex flex-shrink-0 items-center">
                                     <a href="/">
                                         <Image
                                             className="block h-24 w-24 lg:hidden"
-                                            src="/assets/hl.png"
+                                            src="/assets/hackNew.webp"
                                             alt="Hackovate-Logo"
-                                            width={100}
-                                            height={100}
+                                            width={500}
+                                            height={500}
                                         /><Image
-                                            className="hidden h-40 w-auto lg:block"
-                                            src="/assets/hackovate_logo.png"
+                                            className="hidden h-28 w-28 lg:block"
+                                            src="/assets/hackNew.webp"
                                             alt="Hackovate-Logo"
-                                            width={100}
-                                            height={100}
+                                            width={500}
+                                            height={500}
                                         />
                                     </a>
                                 </div>
