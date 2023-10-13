@@ -1,34 +1,34 @@
-'use client';
+"use client";
 
 import { IconType } from "react-icons/lib";
 import Image from "next/image";
 
 interface ButtonProps {
-    label: string;
-    onClick: (e: React.MouseEvent<HTMLButtonElement>) => void;
-    disabled?: boolean;
-    outline?: boolean;
-    underline?: boolean;
-    long?: boolean;
-    icon?: IconType;
-    loading?: boolean;
+  label: string;
+  onClick: (e: React.MouseEvent<HTMLButtonElement>) => void;
+  disabled?: boolean;
+  outline?: boolean;
+  underline?: boolean;
+  long?: boolean;
+  icon?: IconType;
+  loading?: boolean;
 }
 
 const Button: React.FC<ButtonProps> = ({
-    label,
-    onClick,
-    disabled,
-    outline,
-    underline,
-    long,
-    icon: Icon,
-    loading,
+  label,
+  onClick,
+  disabled,
+  outline,
+  underline,
+  long,
+  icon: Icon,
+  loading,
 }) => {
-    return (
-        <button
-            onClick={onClick}
-            disabled={disabled}
-            className={`
+  return (
+    <button
+      onClick={onClick}
+      disabled={disabled}
+      className={`
             relative
             disabled:opacity-70
             disabled:cursor-not-allowed
@@ -44,8 +44,9 @@ const Button: React.FC<ButtonProps> = ({
             ${underline ? `underline border-none` : ``}
             ${long ? `w-full` : ``}
             `}
-        >
-            <div className={`
+    >
+      <div
+        className={`
             flex
             flex-row
             gap-2
@@ -53,16 +54,22 @@ const Button: React.FC<ButtonProps> = ({
             justify-between
             items-center
             ${long ? `!justify-center` : ``} 
-            `}>
-                {loading ? <Image src={"/images/SpinnerLoader.gif"} width={30} height={20} alt="loader" /> : `${label}`}
-                {Icon && (
-                    <Icon
-                        size={18}
-                    />
-                )}
-            </div>
-        </button>
-    );
-}
+            `}
+      >
+        {loading ? (
+          <Image
+            src={"/images/SpinnerLoader.gif"}
+            width={30}
+            height={20}
+            alt="loader"
+          />
+        ) : (
+          `${label}`
+        )}
+        {Icon && <Icon size={18} />}
+      </div>
+    </button>
+  );
+};
 
 export default Button;
