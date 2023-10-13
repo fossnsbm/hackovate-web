@@ -1,6 +1,5 @@
 "use client";
 
-import Footer from "@/components/Footer";
 import LongFooter from "@/components/LongFooter";
 import NavBar from "@/components/NavBar";
 import RegisterForm from "@/components/RegisterForm";
