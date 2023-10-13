@@ -3,6 +3,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCalendar, faBuilding, faClock } from '@fortawesome/free-solid-svg-icons';
 
 const HeaderSection = () => {
     const [countdown, setCountdown] = useState({
@@ -10,10 +12,8 @@ const HeaderSection = () => {
         hours: 0,
         minutes: 0,
     });
-
     // Set the target date and time for the countdown
     const targetDate = new Date('2023-10-21T00:00:00');
-
     useEffect(() => {
         // Function to update the countdown
         const updateCountdown = () => {
@@ -39,19 +39,18 @@ const HeaderSection = () => {
     }, []);
 
     return (
-        <section className='lg:mx-36 mx-12 mt-16'>
-
-            <div className="Herostyles__StyledHeroContainer-sc-ofav2u-1 cQvurY">
+        <section className='lg:px-36 px-12 pt-16'style={{ backgroundImage: 'url("assets/red-grid.png")', backgroundSize: 'cover', backgroundPosition: 'center' }}>
+            <div className="Herostyles__StyledHeroContainer-sc-ofav2u-1 cQvurY pt-12 md:pt-14">
                 <div className="Herostyles__StyledHeroContent-sc-ofav2u-2 iUyscg">
                     <h1 className="Herostyles__StyledHeroTitle-sc-ofav2u-3 bAidkr">
                         <strong>Join us</strong> in soarking innovation and coding excellence!
                     </h1>
                     <div className="Herostyles__StyledHeroPresented-sc-ofav2u-4 hlOluo">
                         <div className="Sponsorsstyles__StyledSponsors-sc-1s3hmyw-0 hYucrB">
-                            <div className='font-bold text-xl md:space-x-24 mb-14 mt-10 md:flex space-y-4 md:space-y-0'>
-                                <div>23rd of OCT</div>
-                                <div>FOC-B1-L101</div>
-                                <div>9AM - 12 PM</div>
+                            <div className='font-bold text-xl md:space-x-24 mb-10 mt-10 md:flex space-y-4 md:space-y-0'>
+                                <div> <FontAwesomeIcon icon={faCalendar} /> Oct 23, 2023</div>
+                                <div> <FontAwesomeIcon icon={faBuilding} /> FOC-B1-L101</div>
+                                <div> <FontAwesomeIcon icon={faClock} /> 9AM - 12 PM</div>
                             </div>
                             <div className="Sponsorsstyles__StyledSponsorsTitle-sc-1s3hmyw-1 Cxcci">Organized by</div>
                             <div className="Sponsorsstyles__StyledSponsorsList-sc-1s3hmyw-2 gDStNp">

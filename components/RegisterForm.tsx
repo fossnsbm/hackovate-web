@@ -40,7 +40,7 @@ const RegisterForm = () => {
   return (
     <>
       <Container>
-        <div className="pt-10 pb-24">
+        <div className="pb-14 pt-32 md:pt-44">
           <h1 className="text-gray text-2xl md:text-4xl lg:text-5xl font-semibold">
             Let&apos;s get <span className="text-[#F0D268]">registered.</span>
           </h1>

@@ -17,10 +17,10 @@ function classNames(...classes: string[]) {
 
 export default function NavBar() {
     return (
-        <Disclosure as="nav" className="mb-36">
+        <Disclosure as="nav" className="">
             {({ open }) => (
                 <>
-                    <div className="pt-3 top-0 lg:pt-8 fixed md:px-32 bg-black pb-6 z-40" style={{width:"100%"}}>
+                    <div className="backdrop-filter backdrop-blur-xl pt-3 top-0 lg:pt-4 fixed md:px-32 pb-1 z-40" style={{width:"100%"}}>
                         <div className="relative flex h-16 items-center justify-between">
                             <div className="absolute inset-y-0 right-7 flex items-center sm:hidden  z-50">
                                 {/* Mobile menu button*/}
@@ -54,7 +54,7 @@ export default function NavBar() {
                             </div>
                             <div className="hidden md:flex absolute inset-y-0 right-0 items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
 
-                                <Link href="/register" className="Headerstyles__StyledHeaderLink-sc-cucath-8 zZYfh md:mr-8">
+                                <Link href="/#About" className="Headerstyles__StyledHeaderLink-sc-cucath-8 zZYfh md:mr-8">
                                     About
                                 </Link>
                                 <Link href="/register" className="ButtonMainstyles__StyledButtonMain-sc-1f8wtna-0 kMzRJv ">
