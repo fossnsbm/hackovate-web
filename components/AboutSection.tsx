@@ -19,7 +19,7 @@ const AboutSection = () => {
             ABOUT EVENT
           </p>
           <p className='font-bold' style={{ fontSize: "18px" }}>
-            Hacktomberfest is a global celebration of open-source software, and
+            Hactoberfest is a global celebration of open-source software, and
             it{"'"}s that time of the year again! This October, developers,
             especially students, are encouraged to contribute to open-source
             projects by submitting pull requests on GitHub.
@@ -27,7 +27,7 @@ const AboutSection = () => {
           <br />
           <p className='font-bold' style={{ fontSize: "18px" }}>
             As the FOSS Community of NSBM, we{"'"}re thrilled to announce our
-            hackathon, Hackovate 2023, in parallel to Hacktomberfest 2023.This
+            hackathon, Hackovate 2023, in parallel to Hactoberfest 2023.This
             is your opportunity to shine as a individual, create real impact,
             and showcase your coding skills. Don{"'"}t miss out on this
             incredible opportunity to be a part of the open-source revolution.
