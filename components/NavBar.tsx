@@ -8,7 +8,7 @@ import Image from "next/image";
 
 const navigation = [
   { name: "About", href: "/events/hackovate#About", current: false },
-  { name: "Strat Hacking", href: "/events/hackovate/register", current: false },
+  { name: "Start Hacking", href: "/events/hackovate/register", current: false },
 ];
 
 function classNames(...classes: string[]) {
