@@ -43,7 +43,7 @@ const HeaderSection = () => {
             <div className="Herostyles__StyledHeroContainer-sc-ofav2u-1 cQvurY pt-12 md:pt-14">
                 <div className="Herostyles__StyledHeroContent-sc-ofav2u-2 iUyscg">
                     <h1 className="Herostyles__StyledHeroTitle-sc-ofav2u-3 bAidkr">
-                        <strong>Join us</strong> in soarking innovation and coding excellence!
+                        <strong>Join us</strong> in sparking innovation and coding excellence!
                     </h1>
                     <div className="Herostyles__StyledHeroPresented-sc-ofav2u-4 hlOluo">
                         <div className="Sponsorsstyles__StyledSponsors-sc-1s3hmyw-0 hYucrB">
