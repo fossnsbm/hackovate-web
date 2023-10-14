@@ -35,7 +35,7 @@ export default function NavBar() {
                             </div>
                             <div className="flex flex-1 items-left justify-left sm:items-stretch sm:justify-start ps-10 md:ps-0">
                                 <div className="flex flex-shrink-0 items-center">
-                                    <a href="//events/hackovate">
+                                    <a href="/events/hackovate">
                                         <Image
                                             className="block h-24 w-24 lg:hidden"
                                             src="/assets/hackNew.webp"
