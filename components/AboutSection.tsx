@@ -19,27 +19,24 @@ const AboutSection = () => {
             ABOUT EVENT
           </p>
           <p className="font-bold" style={{ fontSize: "18px" }}>
-            Forem ipsum dolor sit amet, consectetur adipiscing elit.Forem ipsum
-            dolor sit amet, consectetur adipiscing elit.Forem ipsum dolor sit
-            amet, consectetur adipiscing elit.Forem ipsum dolor sit amet,
-            consectetur adipiscing elit.Forem ipsum dolor sit amet, consectetur
-            adipiscing elit.
+            Hacktomberfest is a global celebration of open-source software, and
+            it{"'"}s that time of the year again! This October, developers,
+            especially students, are encouraged to contribute to open-source
+            projects by submitting pull requests on GitHub.
           </p>
           <br />
           <p className="font-bold" style={{ fontSize: "18px" }}>
-            Forem ipsum dolor sit amet, consectetur adipiscing elit.Forem ipsum
-            dolor sit amet, consectetur adipiscing elit.Forem ipsum dolor sit
-            amet, consectetur adipiscing elit.Forem ipsum dolor sit amet,
-            consectetur adipiscing elit.Forem ipsum dolor sit amet, consectetur
-            adipiscing elit.Forem ipsum dolor sit amet, consectetur adipiscing
-            elit.Forem ipsum dolor sit amet, consectetur adipiscing elit.Forem
-            ipsum dolor sit amet, consectetur adipiscing elit.Forem ipsum dolor
-            sit amet, consectetur adipiscing elit.Forem ipsum dolor sit amet,
-            consectetur adipiscing elit.Forem ipsum dolor sit amet, consectetur
-            adipiscing elit.Forem ipsum dolor sit amet, consectetur adipiscing
-            elit.Forem ipsum dolor sit amet, consectetur adipiscing elit.Forem
-            ipsum dolor sit amet, consectetur adipiscing elit.Forem ipsum dolor
-            sit amet, consectetur adipiscing elit.
+            As the FOSS Community of NSBM, we{"'"}re thrilled to announce our
+            hackathon, Hackovate 2023, in parallel to Hacktomberfest 2023.This
+            is your opportunity to shine as a individual, create real impact,
+            and showcase your coding skills.
+          </p>
+          <br />
+          <p className="font-bold" style={{ fontSize: "18px" }}>
+            Don{"'"}t miss out on this incredible opportunity to be a part of
+            the open-source revolution. Join us at Hackovate 2023, where coding
+            meets creativity, and together, we{"'"}ll make a lasting impact on
+            the world of open-source software.
           </p>
         </div>
         <div className="right-0 pt-48 me-8">
