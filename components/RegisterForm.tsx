@@ -3,6 +3,7 @@ import Button from "./Button";
 import Container from "./Container";
 import Swal from "sweetalert2";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 const formStyles = {
   labelStyle: "text-white md:text-lg lg:text-xl",
@@ -13,6 +14,7 @@ const formStyles = {
 };
 
 const RegisterForm = () => {
+  const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
   const [formData, setFormData] = useState({
     name: "",
@@ -34,12 +36,14 @@ const RegisterForm = () => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
+    setIsLoading(true);
     const isValid = validateForm();
-
+    if(!isValid) {
+      setIsLoading(false);
+      return;
+    }
     if (isValid) {
       const formEle: HTMLFormElement | null = document.querySelector("form");
-
       if (formEle) {
         if (formEle) {
           const formData = new FormData(formEle);
@@ -63,6 +67,7 @@ const RegisterForm = () => {
                 "success"
               ).then(() => {
                 // redirect to home page
+                setIsLoading(false);
                 router.push("/events/hackovate");
               });
 
@@ -266,8 +271,17 @@ const RegisterForm = () => {
                   </div>
                 )}
               </div>
-              <div className="mt-6">
+              <div id="btnRegister" className={`mt-6 ${isLoading ? 'hidden' : ''}`}>
                 <Button label="Register" onClick={handleSubmit as any} long />
+              </div>
+              <div id="spinLoader" className={`flex items-center justify-center h-full ${isLoading ? '' : 'hidden'}`}>
+                <Image
+                  src="/assets/SpinnerLoader.gif"
+                  className="text-center"
+                  alt="Loading..."
+                  width={75}
+                  height={75}
+                />
               </div>
             </form>
           </div>
