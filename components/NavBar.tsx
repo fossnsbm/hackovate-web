@@ -7,8 +7,8 @@ import Link from "next/link";
 import Image from "next/image";
 
 const navigation = [
-  { name: "About", href: "#", current: false },
-  { name: "Strat Hacking", href: "#", current: false },
+  { name: "About", href: "/events/hackovate#About", current: false },
+  { name: "Strat Hacking", href: "/events/hackovate/register", current: false },
 ];
 
 function classNames(...classes: string[]) {
