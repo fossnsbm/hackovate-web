@@ -49,7 +49,7 @@ const HeaderSection = () => {
                         <div className="Sponsorsstyles__StyledSponsors-sc-1s3hmyw-0 hYucrB">
                             <div className='font-bold text-xl md:space-x-24 mb-10 mt-10 md:flex space-y-4 md:space-y-0'>
                                 <div> <FontAwesomeIcon icon={faCalendar} /> Oct 23, 2023</div>
-                                <div> <FontAwesomeIcon icon={faBuilding} /> FOC-B1-L101</div>
+                                <div> <FontAwesomeIcon icon={faBuilding} /> FOC-B1-L102</div>
                                 <div> <FontAwesomeIcon icon={faClock} /> 9AM - 12 PM</div>
                             </div>
                             <div className="Sponsorsstyles__StyledSponsorsTitle-sc-1s3hmyw-1 Cxcci">Organized by</div>
