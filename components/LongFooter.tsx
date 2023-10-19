@@ -32,7 +32,7 @@ const LongFooter = (props: Props) => {
             </div>
             <div>
               <p className="text-lg md:text-xl font-semibold">
-                B1 - L101, Faculty OF Computing
+                B1 - L102, Faculty OF Computing
               </p>
             </div>
           </div>
