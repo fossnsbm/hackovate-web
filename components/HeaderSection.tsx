@@ -13,7 +13,7 @@ const HeaderSection = () => {
         minutes: 0,
     });
     // Set the target date and time for the countdown
-    const targetDate = new Date('2023-10-21T00:00:00');
+    const targetDate = new Date('2023-10-21T12:00:00');
     useEffect(() => {
         // Function to update the countdown
         const updateCountdown = () => {
