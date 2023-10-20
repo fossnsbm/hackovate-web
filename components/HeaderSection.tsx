@@ -128,7 +128,7 @@ const HeaderSection = () => {
                                 backgroundColor: countdown.days >= 2 ? '#EC4237' : '',
                             }}></div>
                             <div className="Herostyles__StyledCountdownLoadingItem-sc-ofav2u-12 jSlIIA" style={{
-                                backgroundColor: (countdown.minutes >= 1 && countdown.days >= 0) ? '#EC4237' : '',
+                                backgroundColor: (countdown.minutes == 0 && countdown.hours == 0 && countdown.days == 0 ) ? '' : '#EC4237',
                             }}></div>
 
                         </div>
