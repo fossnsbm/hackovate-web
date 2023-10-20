@@ -25,10 +25,10 @@ const HeaderSection = () => {
             const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
 
             setCountdown({
-                days,
-                hours,
-                minutes,
-            });
+                days: Math.max(0, days),
+                hours: Math.max(0, hours),
+                minutes: Math.max(0, minutes),
+            });            
         };
 
         // Update the countdown every second
@@ -128,7 +128,7 @@ const HeaderSection = () => {
                                 backgroundColor: countdown.days >= 2 ? '#EC4237' : '',
                             }}></div>
                             <div className="Herostyles__StyledCountdownLoadingItem-sc-ofav2u-12 jSlIIA" style={{
-                                backgroundColor: (countdown.minutes >= 1 && countdown.days >= 1) ? '#EC4237' : '',
+                                backgroundColor: (countdown.minutes >= 1 && countdown.days >= 0) ? '#EC4237' : '',
                             }}></div>
 
                         </div>
