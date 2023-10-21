@@ -6,11 +6,13 @@ import RegisterForm from "@/components/RegisterForm";
 import React from "react";
 import { useRouter } from 'next/navigation';
 import { useEffect } from "react";
-
 const RegisterPage = () => {
+
   //redirect home
   const router = useRouter();
-  router.push("/events/hackovate");
+  useEffect(() => {
+    router.push("./");
+  }, []);
   return (
     <>
       <NavBar />
