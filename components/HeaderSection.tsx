@@ -133,8 +133,8 @@ const HeaderSection = () => {
 
                         </div>
                     </div>
-                    <Link href="/events/hackovate/register" className="ButtonMainstyles__StyledButtonMain-sc-1f8wtna-0 kMzRJv ">
-                        <p className='font-bold'>Register now!</p>
+                    <Link href="/events/hackovate" className="ButtonMainstyles__StyledButtonMain-sc-1f8wtna-0 kMzRJv">
+                        <p className='font-bold'>Registration closed</p>
                     </Link>
                 </div>
             </div>
