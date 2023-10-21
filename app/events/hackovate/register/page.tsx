@@ -11,7 +11,7 @@ const RegisterPage = () => {
   //redirect home
   const router = useRouter();
   useEffect(() => {
-    router.push("/");
+    router.push("/events/register");
   }, []);
   return (
     <>
