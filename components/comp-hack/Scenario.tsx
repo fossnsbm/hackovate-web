@@ -1,12 +1,32 @@
 import Container from "../Container";
+import { useState, useEffect } from "react";
 
 const Scenario = () => {
+    const [text, setText] = useState('');
+
+  useEffect(() => {
+      const targetText = 'Scenario';
+      let currentIndex = 0;
+
+      const intervalId = setInterval(() => {
+          if (currentIndex <= targetText.length) {
+              setText(targetText.slice(0, currentIndex));
+              currentIndex += 1;
+          } else {
+              clearInterval(intervalId);
+          }
+      }, 100); // Adjust the interval based on your preference
+
+      return () => {
+          clearInterval(intervalId);
+      };
+  }, []);
     return (
         <>
             <Container>
                 <div className="pt-8 md:pt-12">
                     <h1 className="text-gray text-2xl md:text-4xl lg:text-5xl font-extrabold uppercase text-[#F0D268]">
-                        Scenario
+                        {text}
                     </h1>
                     <div className="mt-10 text-base md:text-lg lg:text-2xl text-justify">
                         <div>

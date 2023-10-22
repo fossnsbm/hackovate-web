@@ -57,7 +57,7 @@ export default function NavBar() {
                                 <Link href="/events/hackovate/#About" className="Headerstyles__StyledHeaderLink-sc-cucath-8 zZYfh md:mr-8">
                                     About
                                 </Link>
-                                <Link href="/events/hackovate/start-hacking" className="ButtonMainstyles__StyledButtonMain-sc-1f8wtna-0 kMzRJv ">
+                                <Link href="/events/hackovate/start-hacking" className="ButtonMainstyles__StyledButtonMain-sc-1f8wtna-0 kMzRJv">
                                     <p className='font-bold'>Start Hacking</p>
                                 </Link>
                             </div>

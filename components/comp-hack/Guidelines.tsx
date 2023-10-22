@@ -27,9 +27,13 @@ const Guidelines = () => {
         <>
             <Container>
                 <div className="pb-14 pt-32 md:pt-40">
-                    <p className="text-[#F0D268] text-2xl md:text-4xl lg:text-5xl font-extrabold uppercase animate-pulse">
+                    <div className="flex">
+                    <p className="text-[#F0D268] text-2xl md:text-4xl lg:text-5xl font-extrabold uppercase">
                         {text}
                     </p>
+                    <a href="https://github.com/fossnsbm/hackovate-challenges" className="ButtonMainstyles__StyledButtonMain-sc-1f8wtna-0 kMzRJv ms-10 blinking-glow-button" style={{fontWeight:"bold"}}>View on Github</a>
+                    </div>
+                   
                     <div className="mt-8">
                         <ul className="list-disc pl-6 space-y-5">
                             <li className="text-base md:text-lg lg:text-2xl">
@@ -59,6 +63,9 @@ const Guidelines = () => {
                             </li>
                             <li className="text-base md:text-lg lg:text-2xl">
                                 Your code should be genuine; if it{"'"}s like spam, AI-generated, or likewise, your PR will be automatically rejected.
+                            </li>
+                            <li className="text-base md:text-lg lg:text-2xl">
+                                Utilize HTML, CSS, and JavaScript as the core technologies in your source code. You are allowed to incorporate external libraries such as Tailwind CSS, Bootstrap, etc., to enhance your development. Feel free to explore and use CDNs as per your preference.
                             </li>
                             <li className="text-base md:text-lg lg:text-2xl">
                                 If your pull request does not meet these guidelines, it will be rejected.
