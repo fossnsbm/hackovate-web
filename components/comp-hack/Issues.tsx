@@ -1,25 +1,26 @@
 import Container from "../Container";
 import { useState, useEffect } from "react";
+import Image from "next/image";
 
 const Issues = () => {
   const [text, setText] = useState('');
 
   useEffect(() => {
-      const targetText = 'Issues';
-      let currentIndex = 0;
+    const targetText = 'Issues';
+    let currentIndex = 0;
 
-      const intervalId = setInterval(() => {
-          if (currentIndex <= targetText.length) {
-              setText(targetText.slice(0, currentIndex));
-              currentIndex += 1;
-          } else {
-              clearInterval(intervalId);
-          }
-      }, 100); // Adjust the interval based on your preference
+    const intervalId = setInterval(() => {
+      if (currentIndex <= targetText.length) {
+        setText(targetText.slice(0, currentIndex));
+        currentIndex += 1;
+      } else {
+        clearInterval(intervalId);
+      }
+    }, 100); // Adjust the interval based on your preference
 
-      return () => {
-          clearInterval(intervalId);
-      };
+    return () => {
+      clearInterval(intervalId);
+    };
   }, []);
   return (
     <>
@@ -32,6 +33,13 @@ const Issues = () => {
         <div className="text-white text-lg list-decimal list-inside space-y-20">
           <div className="text-lg lg:text-2xl">
             <a href="https://github.com/fossnsbm/hackovate-challenges/issues/7" className="bg-[#0E8A16] text-white p-2 text-lg font-bold rounded-md uppercase">issue #1</a> Create a frontend based on the given wireframe with responsiveness
+            <div className="mt-5 flex items-center justify-center bg-white rounded-xl">
+              <Image
+                src="/assets/wireframe.jpg"
+                alt="Foss-Logo"
+                width={700}
+                height={700}
+              /></div>
             <ul className="pl-5 mt-2 space-y-1 list-disc list-inside text-lg pt-3">
               <li>
                 The frontend should be according to the wireframe that we
