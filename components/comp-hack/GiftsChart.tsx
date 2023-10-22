@@ -104,7 +104,7 @@ const GiftsChart = () => {
                                     </td>
                                     <td className="border ps-20">
                                         {/* Add your text content */}
-                                        ISSUE #5 - First Approved PR (Suprise Gift)
+                                        ISSUE #5 - First Approved PR (Surprise Gift)
                                     </td>
                                 </tr>
                                 {/* Add more rows as needed */}
