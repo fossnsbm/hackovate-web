@@ -5,15 +5,14 @@ const Issues = () => {
     <>
       <Container>
         <div className="pb-10 pt-32">
-          <h1 className="text-gray text-2xl md:text-4xl lg:text-5xl font-semibold uppercase">
-            #Issues
+          <h1 className="text-[#F0D268] text-gray text-2xl md:text-4xl lg:text-5xl font-extrabold uppercase">
+            Issues
           </h1>
         </div>
-
-        <ol className="space-y-4 text-white text-lg list-decimal list-inside ">
-          <li>
-            Create a frontend based on the given wireframe with responsiveness.
-            <ul className="pl-5 mt-2 space-y-1 list-disc list-inside">
+        <div className="text-white text-lg list-decimal list-inside space-y-20">
+          <div className="text-lg lg:text-2xl">
+            <a href="#" className="bg-[#0E8A16] text-white p-2 text-lg font-bold rounded-md uppercase">issue #1</a> Create a frontend based on the given wireframe with responsiveness
+            <ul className="pl-5 mt-2 space-y-1 list-disc list-inside text-lg pt-3">
               <li>
                 The frontend should be according to the wireframe that we
                 provided.
@@ -21,10 +20,10 @@ const Issues = () => {
               <li>You can improve UI/UX if you want.</li>
               <li>The frontend should be responsive.</li>
             </ul>
-          </li>
-          <li>
-            Select items based on the pre-selected quantity.
-            <ul className="pl-5 mt-2 space-y-1 list-disc list-inside">
+          </div>
+          <div className="text-lg lg:text-2xl">
+            <a href="#" className="bg-[#5319E7] text-white p-2 text-lg font-bold rounded-md uppercase">issue #2</a> Select items based on the pre-selected quantity
+            <ul className="pl-5 mt-2 space-y-1 list-disc list-inside text-lg pt-3">
               <li>
                 The user needs to select a quantity first for each section.
               </li>
@@ -40,10 +39,10 @@ const Issues = () => {
               <li>Give warnings according to the above limitations.</li>
               <li>Selecting buttons should be toggleable.</li>
             </ul>
-          </li>
-          <li>
-            Interactive clicks (toggle buttons).
-            <ul className="pl-5 mt-2 space-y-1 list-disc list-inside">
+          </div>
+          <div className="text-lg lg:text-2xl">
+            <a href="#" className="bg-[#D93F0B] text-white p-2 text-lg font-bold rounded-md uppercase">issue #3</a> Interactive clicks (toggle buttons)
+            <ul className="pl-5 mt-2 space-y-1 list-disc list-inside text-lg pt-3">
               <li>
                 You need to update the subtotal of each section based on the
                 selected item prices.
@@ -54,10 +53,10 @@ const Issues = () => {
                 selects an item, it should be incease.
               </li>
             </ul>
-          </li>
-          <li>
-            Check that the selected item numbers match the selected quantities.
-            <ul className="pl-5 mt-2 space-y-1 list-disc list-inside">
+          </div>
+          <div className="text-lg lg:text-2xl">
+            <a href="#" className="bg-[#1D76DB] text-white p-2 text-lg font-bold rounded-md uppercase">issue #4</a> Check that the selected item numbers match the selected quantities
+            <ul className="pl-5 mt-2 space-y-1 list-disc list-inside text-lg pt-3">
               <li>
                 When pressing the order now button, you need to check the
                 selected item count in each section to match the quantity you
@@ -68,11 +67,10 @@ const Issues = () => {
                 warning message.
               </li>
             </ul>
-          </li>
-          <li>
-            When you press submit, a popup with the final total appears, and
-            when you click a button, a thank-you message appears.
-            <ul className="pl-5 mt-2 space-y-1 list-disc list-inside">
+          </div>
+          <div className="text-lg lg:text-2xl">
+            <a href="#" className="bg-[#006B75] text-white p-2 text-lg font-bold rounded-md uppercase">issue #5</a> Final submit popup and thank you message
+            <ul className="pl-5 mt-2 space-y-1 list-disc list-inside text-lg pt-3">
               <li>
                 After completing all four issues, only you can complete this
                 one.
@@ -80,7 +78,7 @@ const Issues = () => {
               <li>
                 You should get the subtotal price of the gun prices and
                 inventory and display the total price with a pay-now button in a
-                pop-up notification.
+                pop-up box.
               </li>
               <li>
                 When the user clicked the pay now button, a thank-you message
@@ -90,8 +88,8 @@ const Issues = () => {
                 You can create a popup and thank-you message UI as you wish.
               </li>
             </ul>
-          </li>
-        </ol>
+          </div>
+        </div>
       </Container>
     </>
   );
