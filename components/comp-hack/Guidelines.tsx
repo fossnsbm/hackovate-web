@@ -26,7 +26,7 @@ const Guidelines = () => {
     return (
         <>
             <Container>
-                <div className="pb-14 pt-32 md:pt-44">
+                <div className="pb-14 pt-32 md:pt-40">
                     <p className="text-[#F0D268] text-2xl md:text-4xl lg:text-5xl font-extrabold uppercase animate-pulse">
                         {text}
                     </p>
