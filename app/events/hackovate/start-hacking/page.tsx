@@ -1,10 +1,13 @@
 "use client";
 
+import NavBar from "@/components/NavBar";
+
 const startHacking = () => {
     return (
         <>
-        <h1>hello bro</h1>
-
+        < NavBar />
+        
+        
         </>
     );
 };
