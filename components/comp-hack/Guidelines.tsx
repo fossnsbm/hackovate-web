@@ -28,12 +28,12 @@ const Guidelines = () => {
             <Container>
                 <div className="pb-14 pt-32 md:pt-40">
                     <div className="flex">
-                    <p className="text-[#F0D268] text-2xl md:text-4xl lg:text-5xl font-extrabold uppercase">
-                        {text}
-                    </p>
-                    <a href="https://github.com/fossnsbm/hackovate-challenges" target="_blank" className="ButtonMainstyles__StyledButtonMain-sc-1f8wtna-0 kMzRJv ms-10 blinking-glow-button" style={{fontWeight:"bold"}}>View on Github</a>
+                        <p className="text-[#F0D268] text-2xl md:text-4xl lg:text-5xl font-extrabold uppercase">
+                            {text}
+                        </p>
+                        <a href="https://github.com/fossnsbm/hackovate-challenges" target="_blank" className="ButtonMainstyles__StyledButtonMain-sc-1f8wtna-0 kMzRJv ms-10 blinking-glow-button" style={{ fontWeight: "bold" }}>View on Github</a>
                     </div>
-                   
+
                     <div className="mt-8">
                         <ul className="list-disc pl-6 space-y-5">
                             <li className="text-base md:text-lg lg:text-2xl">
@@ -41,6 +41,9 @@ const Guidelines = () => {
                             </li>
                             <li className="text-base md:text-lg lg:text-2xl">
                                 Fork the repository first (only fork the main branch).
+                            </li>
+                            <li className="text-base md:text-lg lg:text-2xl">
+                                Clone the forked repository to your local machine and create a new folder within it using your GitHub username. Add all your files to that specific folder.
                             </li>
                             <li className="text-base md:text-lg lg:text-2xl">
                                 You have five issues to complete. Try to complete them <span className="text-[#F0D268]">one by one from issue #1</span>
