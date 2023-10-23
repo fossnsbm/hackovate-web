@@ -31,7 +31,7 @@ const Guidelines = () => {
                     <p className="text-[#F0D268] text-2xl md:text-4xl lg:text-5xl font-extrabold uppercase">
                         {text}
                     </p>
-                    <a href="https://github.com/fossnsbm/hackovate-challenges" className="ButtonMainstyles__StyledButtonMain-sc-1f8wtna-0 kMzRJv ms-10 blinking-glow-button" style={{fontWeight:"bold"}}>View on Github</a>
+                    <a href="https://github.com/fossnsbm/hackovate-challenges" target="_blank" className="ButtonMainstyles__StyledButtonMain-sc-1f8wtna-0 kMzRJv ms-10 blinking-glow-button" style={{fontWeight:"bold"}}>View on Github</a>
                     </div>
                    
                     <div className="mt-8">
